@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -24,10 +25,13 @@
                   <Image url="@../../../images/logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnSupport" layoutX="550.0" layoutY="24.0" mnemonicParsing="false" onAction="#openSupportView" prefHeight="42.0" prefWidth="95.0" style="-fx-background-color: #2B0245;" text="Support" textFill="#feb93f">
+            <Button fx:id="btnSupport" defaultButton="true" layoutX="550.0" layoutY="24.0" mnemonicParsing="false" onAction="#openSupportView" prefHeight="42.0" prefWidth="95.0" style="-fx-background-color: #2B0245;" text="Support" textFill="#feb93f">
                <font>
                   <Font name="Candara" size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </Pane>
@@ -246,6 +250,9 @@
                            <font>
                               <Font name="Candara" size="18.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
                      </children>
                   </GridPane>
