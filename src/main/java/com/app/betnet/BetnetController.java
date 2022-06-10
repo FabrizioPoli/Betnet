@@ -10,7 +10,16 @@ import java.io.IOException;
 
 public class BetnetController {
 
-    @FXML private Button btnCloseSupport;
+    @FXML
+    private Button btnCloseSupport;
+    @FXML
+    private Button btnCloseBetModal;
+
+    ViewHandler viewHandler = new ViewHandler();
+
+    /********************************
+     * Bet View
+     * ******************************/
 
     public void openSupportView() throws IOException {
         FXMLLoader supportView = new FXMLLoader(BetnetApplication.class.getResource("support-view.fxml"));
@@ -21,9 +30,29 @@ public class BetnetController {
         supportWindow.show();
     }
 
-    public void closeSupportView() throws  IOException {
-        Stage stage = (Stage) btnCloseSupport.getScene().getWindow();
-        stage.close();
+    public void openBetModalView() throws IOException {
+        FXMLLoader supportView = new FXMLLoader(BetnetApplication.class.getResource("bet-modal-view.fxml"));
+        Scene supportScene = new Scene(supportView.load());
+        Stage supportWindow = new Stage();
+        supportWindow.setTitle("Wetten");
+        supportWindow.setScene(supportScene);
+        supportWindow.show();
+    }
+
+    /********************************
+     * Support View
+     * ******************************/
+
+    public void closeSupportView() {
+        viewHandler.closeSupportView(btnCloseSupport);
+    }
+
+    /********************************
+     * Bet-Modal View
+     * ******************************/
+
+    public void closeBetModalView() {
+        viewHandler.closeSupportView(btnCloseBetModal);
     }
 
 

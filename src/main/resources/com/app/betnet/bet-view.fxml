@@ -243,7 +243,7 @@
                               <Insets bottom="10.0" left="10.0" />
                            </GridPane.margin>
                         </GridPane>
-                        <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="123.0" style="-fx-background-radius: 30; -fx-background-color: #2B0245;" text="Wetten" textFill="#feb93f" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                        <Button mnemonicParsing="false" onAction="#openBetModalView" prefHeight="51.0" prefWidth="123.0" style="-fx-background-radius: 30; -fx-background-color: #2B0245;" text="Wetten" textFill="#feb93f" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                            <GridPane.margin>
                               <Insets />
                            </GridPane.margin>
