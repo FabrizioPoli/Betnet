@@ -17,9 +17,11 @@ public class BetnetController {
 
     ViewHandler viewHandler = new ViewHandler();
 
-    /********************************
-     * Bet View
-     * ******************************/
+    /*
+    *******************************
+    * Bet View
+    *******************************
+    */
 
     public void openSupportView() throws IOException {
         FXMLLoader supportView = new FXMLLoader(BetnetApplication.class.getResource("support-view.fxml"));
@@ -39,17 +41,21 @@ public class BetnetController {
         supportWindow.show();
     }
 
-    /********************************
-     * Support View
-     * ******************************/
+    /*
+    *******************************
+    * Support View
+    *******************************
+    */
 
     public void closeSupportView() {
         viewHandler.closeSupportView(btnCloseSupport);
     }
 
-    /********************************
-     * Bet-Modal View
-     * ******************************/
+    /*
+    *******************************
+    * Bet-Modal View
+    *******************************
+    */
 
     public void closeBetModalView() {
         viewHandler.closeSupportView(btnCloseBetModal);
