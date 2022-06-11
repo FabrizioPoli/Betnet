@@ -20,19 +20,48 @@
    <children>
       <Pane prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #2B0245;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="2.0">
-               <image>
-                  <Image url="@../../../images/logo.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="btnSupport" defaultButton="true" layoutX="550.0" layoutY="24.0" mnemonicParsing="false" onAction="#openSupportView" prefHeight="42.0" prefWidth="95.0" style="-fx-background-color: #2B0245;" text="Support" textFill="#feb93f">
-               <font>
-                  <Font name="Candara" size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
+            <GridPane prefHeight="90.0" prefWidth="1200.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="437.0" minWidth="0.0" prefWidth="113.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="815.0" minWidth="10.0" prefWidth="103.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="809.0" minWidth="10.0" prefWidth="97.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="892.0" minWidth="10.0" prefWidth="878.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="89.0" fitWidth="89.0">
+                     <image>
+                        <Image url="@../../../images/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#openBetView" prefHeight="42.0" prefWidth="108.0" style="-fx-background-color: #2B0245;" text="Übersicht" textFill="#feb93f" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Candara" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#openAboutUsView" prefHeight="42.0" prefWidth="95.0" style="-fx-background-color: #2B0245;" text="Über uns" textFill="#feb93f" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Candara" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnSupport" defaultButton="true" mnemonicParsing="false" onAction="#openSupportView" prefHeight="42.0" prefWidth="95.0" style="-fx-background-color: #2B0245;" text="Support" textFill="#feb93f" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Candara" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </GridPane>
          </children>
       </Pane>
       <GridPane prefHeight="670.0" prefWidth="1160.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="110.0">
