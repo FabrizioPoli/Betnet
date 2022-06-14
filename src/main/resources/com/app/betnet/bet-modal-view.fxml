@@ -53,7 +53,7 @@
                               <Insets />
                            </GridPane.margin>
                         </Text>
-                        <TextField style="-fx-border-color: #2B0245; -fx-border-width: 3px;" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                        <TextField fx:id="tbxBet" style="-fx-border-color: #2B0245; -fx-border-width: 3px;" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                            <GridPane.margin>
                               <Insets top="10.0" />
                            </GridPane.margin>
@@ -85,7 +85,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="10.0" layoutY="29.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="123.0" style="-fx-background-radius: 30; -fx-background-color: #2B0245;" text="Senden" textFill="#feb93f" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <Button fx:id="btnSendBet" layoutX="10.0" layoutY="29.0" mnemonicParsing="false" onAction="#submitBet" prefHeight="51.0" prefWidth="123.0" style="-fx-background-radius: 30; -fx-background-color: #2B0245;" text="Senden" textFill="#feb93f" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Candara" size="18.0" />
                      </font>
@@ -118,7 +118,7 @@
                         <Insets bottom="10.0" top="10.0" />
                      </GridPane.margin>
                   </Text>
-                  <TableView prefHeight="180.0" prefWidth="580.0" style="-fx-border-color: #2B0245; -fx-border-width: 3px;" GridPane.rowIndex="1">
+                  <TableView fx:id="tblvBetModal" prefHeight="180.0" prefWidth="580.0" style="-fx-border-color: #2B0245; -fx-border-width: 3px;" GridPane.rowIndex="1">
                      <columns>
                         <TableColumn prefWidth="75.0" text="Spiel" />
                         <TableColumn prefWidth="75.0" text="Ort" />

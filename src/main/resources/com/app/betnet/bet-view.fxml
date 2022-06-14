@@ -205,7 +205,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Text>
-                              <TextField style="-fx-border-color: #2B0245; -fx-border-width: 3px;" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                              <TextField fx:id="tbxTotalBet" editable="false" style="-fx-border-color: #2B0245; -fx-border-width: 3px;" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
@@ -235,7 +235,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Text>
-                              <TextField style="-fx-border-color: #2B0245; -fx-border-width: 3px;" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                              <TextField editable="false" style="-fx-border-color: #2B0245; -fx-border-width: 3px;" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
@@ -262,7 +262,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Text>
-                              <TextField style="-fx-border-color: #2B0245; -fx-border-width: 3px;" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                              <TextField editable="false" style="-fx-border-color: #2B0245; -fx-border-width: 3px;" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>

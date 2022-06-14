@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
@@ -13,6 +14,23 @@ public class BetnetController {
     private Button btnCloseSupport;
     @FXML
     private Button btnCloseBetModal;
+    @FXML
+    private Button btnSendBet;
+    @FXML
+    private TextField tbxBet;
+    @FXML
+    private TextField tbxTotalBet;
+
+    public void submitBet(ActionEvent event) {
+        try {
+            double bet = Double.parseDouble(tbxBet.getText());
+            closeBetModalView();
+        } catch (NumberFormatException e) {
+            System.out.println("Enter only numbers please.");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
     WindowHandler windowHandler = new WindowHandler();
 
