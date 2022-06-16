@@ -6,7 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 
 import java.io.IOException;
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BetnetController {
 
@@ -20,7 +21,18 @@ public class BetnetController {
     private TextField tbxBet;
     @FXML
     private TextField tbxTotalBet;
+    @FXML
+    private TableView tblvBetModal;
+    @FXML
+    private TableColumn<String, Bets> colGame;
+    @FXML
+    private TableColumn<String, Bets> colLocation;
+    @FXML
+    private TableColumn<String, Bets> colDate;
+    @FXML
+    private TableColumn<String, Bets> colBet;
 
+    private List<Bets> betsList;
     WindowHandler windowHandler = new WindowHandler();
 
     /*
@@ -47,6 +59,16 @@ public class BetnetController {
     public void openBetModalView() throws IOException {
         FXMLLoader betModalView = new FXMLLoader(BetnetApplication.class.getResource("bet-modal-view.fxml"));
         windowHandler.openWindow(betModalView, "Wetten");
+
+        TableView tbv = new TableView();
+
+        tbv.getColumns().add(colBet);
+        tbv.getColumns().add(colDate);
+        tbv.getColumns().add(colLocation);
+        for (Bets bet : betsList) {
+            tbv.getItems().add(bet);
+        }
+        tblvBetModal.getChildrenUnmodifiable().addAll(tbv);
     }
 
     /*
@@ -94,5 +116,25 @@ public class BetnetController {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public List<Bets> getBettedBets() {
+        List<Bets> betted = new ArrayList<>();
+        for (Bets bet : betsList
+        ) {
+            if (!bet.getBet().isEmpty()) {
+                betted.add(bet);
+            }
+        }
+        return betted;
+    }
+
+    public void setBetsList() {
+        betsList.add(new Bets("Für FC Aarau vs FC Baden", "17.06.2022", "Aarau"));
+        betsList.add(new Bets("Für FC Baden vs FC Aarau", "17.06.2022", "Aarau"));
+        betsList.add(new Bets("Für FC Basel vs AC Belizona", "21.06.2022", "Basel"));
+        betsList.add(new Bets("Für AC Belizona vs FC Basel", "21.06.2022", "Basel"));
+        betsList.add(new Bets("Für FC Bern vs FC Luzern", "23.06.2022", "Luzern"));
+        betsList.add(new Bets("Für FC Luzern vs FC Bern", "23.06.2022", "Luzern"));
     }
 }
