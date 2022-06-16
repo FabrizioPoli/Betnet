@@ -8,6 +8,11 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+/**
+ * This Code was a test and doesen't work because Google accounts doesen't support third party apps anymore.
+ * Check here: https://support.google.com/accounts/answer/6010255.
+ */
+
 public class MailUtil {
 
     public static void sendMail(String recepient) throws Exception {

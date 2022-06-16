@@ -3,10 +3,13 @@ package com.app.betnet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class BetnetController {
 
@@ -20,17 +23,6 @@ public class BetnetController {
     private TextField tbxBet;
     @FXML
     private TextField tbxTotalBet;
-
-    public void submitBet(ActionEvent event) {
-        try {
-            double bet = Double.parseDouble(tbxBet.getText());
-            closeBetModalView();
-        } catch (NumberFormatException e) {
-            System.out.println("Enter only numbers please.");
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
 
     WindowHandler windowHandler = new WindowHandler();
 
@@ -67,7 +59,23 @@ public class BetnetController {
      */
 
     public void closeSupportView() {
-        windowHandler.closeWindow(btnCloseSupport);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Die Daten gehen verloren!");
+        alert.setContentText("Möchten sie das Fenster wirklich verlassen? Ihre Daten werden nicht gespeichert.");
+        alert.showAndWait();
+        if (alert.getResult() == ButtonType.OK) {
+            windowHandler.closeWindow(btnCloseSupport);
+        } else {
+            alert.close();
+        }
+
+    }
+
+    public void submitEmail() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Email versenden wird nicht unterstützt!");
+        alert.setContentText("Das Versenden von Emails funktioniert nicht, da Google, Drittanbieter nicht mehr unterstützt.\nMehr: https://support.google.com/accounts/answer/6010255");
+        alert.show();
     }
 
     /*
@@ -80,5 +88,14 @@ public class BetnetController {
         windowHandler.closeWindow(btnCloseBetModal);
     }
 
-
+    public void submitBet(ActionEvent event) {
+        try {
+            double bet = Double.parseDouble(tbxBet.getText());
+            closeBetModalView();
+        } catch (NumberFormatException e) {
+            System.out.println("Enter only numbers please.");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }

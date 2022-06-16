@@ -186,7 +186,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="10.0" layoutY="29.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="123.0" style="-fx-background-radius: 30; -fx-background-color: #2B0245;" text="Senden" textFill="#feb93f" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <Button layoutX="10.0" layoutY="29.0" mnemonicParsing="false" onAction="#submitEmail" prefHeight="51.0" prefWidth="123.0" style="-fx-background-radius: 30; -fx-background-color: #2B0245;" text="Senden" textFill="#feb93f" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Candara" size="18.0" />
                      </font>
