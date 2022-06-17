@@ -112,7 +112,10 @@ public class BetnetController {
             double bet = Double.parseDouble(tbxBet.getText());
             closeBetModalView();
         } catch (NumberFormatException e) {
-            System.out.println("Enter only numbers please.");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Ungültige eingabe!");
+            alert.setContentText("Bitte geben Sie nur nummern ein.");
+            alert.show();
         } catch (Exception e) {
             System.out.println(e);
         }
